@@ -5,13 +5,11 @@ const Loader = () => {
     return(
         <div className={styles.Container}>
             <div className={styles.LoadingContainer}>
-                <img src={loadingBar} alt='loadingBar'>
+                <img src={loadingBar} alt='loadingBar'></img>
                     <div className={styles.Title}>
                         Loading...
                     </div>
-                </img>
             </div>
-
         </div>
     );
 }
