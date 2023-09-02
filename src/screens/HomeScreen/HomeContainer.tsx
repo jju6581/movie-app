@@ -23,18 +23,18 @@ class HomeContainer extends Component<{}, HomeContainerState>{
     async componentDidMount(){
         try{
             const {data} = await homeApi.nowPlaying();
-            const movieArray = data.results.map((result:any) => result.id);
+            const movieArray = data.results.map((r:any) => r.id);
             const moviedId = movieArray[Math.floor(Math.random() * movieArray.length)]
             try{
                 const {data : movieDetail} = await homeApi.movieDetail(moviedId);
-                if(movieDetail.videos.result.length == 0){
+                if(movieDetail.videos.results.length == 0){
                     const { data : defaultMovieDetail} = await homeApi.movieDetail(497698);
                     this.setState({movieDetail : defaultMovieDetail});
                 }else{
                     this.setState({movieDetail : movieDetail});
                 }
             }catch(error){
-                this.setState({error:"비디오를 찾을 수 없음"});
+                this.setState({error: `${error}`});
             }
         }catch(error){
             this.setState({error:"비디오를 재생할 수 없음"});
