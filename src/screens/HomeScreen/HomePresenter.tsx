@@ -1,13 +1,11 @@
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import Loader from '../../Loader/Loader';
-import styles from '../HomeScreen/Home.module.css';
+import styles from './Home.module.css';
 import Footer from '../../components/Footer/Footer';
 import QnA from '../../components/QnA/QnA';
 import Description from '../../components/Description/Description';
-
 
 
 interface HomePresenterProps {
@@ -35,7 +33,7 @@ const HomePresenter: React.FC<HomePresenterProps> = ({
           <title>넷플릭스 - 홈</title>
         </Helmet>
       </HelmetProvider>
-{error}
+
       {movieDetail && (
         <div className={styles.homeContainer}>
           <iframe 
@@ -45,7 +43,6 @@ const HomePresenter: React.FC<HomePresenterProps> = ({
             src={`https://www.youtube.com/embed/${movieDetail.videos.results[0].key}?controls=0&autoplay=1&loop=1&mute=1&playlist=${movieDetail.videos.results[0].key}`}
             width="640"
             height="360"
-            frameBorder="0"
             allow="autoplay; fullscreen"
           ></iframe>
           <div className={styles.content}>
@@ -86,7 +83,7 @@ const HomePresenter: React.FC<HomePresenterProps> = ({
 
                 <Description/>
                 <QnA/>
-                <Footer></Footer>
+                <Footer/>
 
           </div>
         </div>
