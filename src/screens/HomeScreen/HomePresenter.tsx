@@ -6,6 +6,7 @@ import Loader from '../../Loader/Loader';
 import styles from '../HomeScreen/Home.module.css';
 import Footer from '../../components/Footer/Footer';
 import QnA from '../../components/QnA/QnA';
+import Description from '../../components/Description/Description';
 
 
 
@@ -83,6 +84,7 @@ const HomePresenter: React.FC<HomePresenterProps> = ({
           <div className={styles.homeSubContainer}>
             {/* Render Description, QnA, and Footer components */}
 
+                <Description/>
                 <QnA/>
                 <Footer></Footer>
 
