@@ -4,8 +4,6 @@ import { useParams } from "react-router-dom";
 import withRouter from "../../utils/withRouter";
 import { moviesApi } from "../../api/movie";
 
-
-
 interface DetailContainerState{
     result : any |null,
     error : string | null,
